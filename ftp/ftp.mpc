@@ -1,0 +1,5 @@
+
+project(ftp) :aceexe{
+  exename = ftp
+  exeout = $(FARS_V2x5_ROOT)\bin
+}

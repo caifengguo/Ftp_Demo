@@ -1,0 +1,4 @@
+workspace(ListSolutionByFTP){
+	./ListManagermentByFTP
+	./ListByFtpTest
+}

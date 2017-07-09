@@ -1,0 +1,15 @@
+project(ListByFtpTest){
+	exename = ListByFtpTest
+	pch_header = stdafx.h
+	pch_source = stdafx.cpp
+
+	specific(prop:microsoft){
+		exeout = ../bin		
+		warning_level = 4
+		unicode = 1
+		Debug::exe_ext = _debug.exe
+	}
+	Source_Files{
+		*.cpp
+	}
+}

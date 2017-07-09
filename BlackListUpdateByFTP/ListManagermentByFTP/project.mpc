@@ -1,0 +1,35 @@
+project(ListManagerment):build_files{
+	sharedname = ListManagerment
+	pch_header = stdafx.h
+	pch_source = stdafx.cpp
+	
+	libs +=  Log4cplusAgentu
+	includes += ../CommonSDK/include
+
+	macros += ListManagerDLLExport
+
+
+	specific(prop:microsoft){
+		prebuild += PreBuildEx.bat $(SolutionDir) $(ProjectDir) $(ProjectName) 1 $(PlatformName)
+	}
+	expand(ProjectName){
+		$(ProjectName)
+	}
+	Resource_Files{
+        	$(ProjectName).rc
+	}
+
+	specific(prop:microsoft){
+		libout = ../bin/$(Platformname)/lib
+		dllout = ../bin
+		warning_level = 4
+		unicode = 1
+		libpaths += ../CommonSDK/$(Platformname)/lib
+		Debug::runtime_library = 1
+		Release::runtime_library = 0
+	}
+	
+	Source_Files{
+		*.cpp
+	}
+}
